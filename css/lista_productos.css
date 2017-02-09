@@ -1,0 +1,134 @@
+#cuerpo{
+	/*border: 1px solid blue;*/
+	color: white;
+}
+
+.titulo{
+	color: white;
+	font-size: 1.8em;
+}
+
+.mostrar_foto{
+	text-decoration: none;
+	color: white;
+}
+
+.mostrar_foto:hover{
+	color: red;
+	font-size: 1.2em;
+	cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#popup {
+	/*Tamanho*/
+	width: 800px;
+ 	height: 500px;
+
+	/*Posicionamiento*/
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 2;
+	
+	/*Colores*/
+	/*background-image: url(imagenes/fotos/Apple_Macbook_Pro_2016.jpg);*/
+	/*background-size: 100%, 100%;*/
+	/*border: 1px solid yellow;*/
+ 	background-color: white;
+ 	
+ 	/*overflow: hidden;*/
+}
+
+/*.content-popup {
+    margin:0px auto;
+    margin-top:120px;
+    position:relative;
+    padding:10px;
+    width:500px;
+    min-height:250px;
+    border-radius:4px;
+    background-color:#FFFFFF;
+    box-shadow: 0 2px 5px #666666;
+}*/
+
+.popup-overlay {
+	position        : fixed;
+	left            : 0;
+	top             : 0;
+	height          : 100%;
+	width           : 100%;
+	z-index         : 1;
+	display         : none;
+	background-color: #777777;
+	cursor          : pointer;
+	opacity         : 0.7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#contenedor_opciones{
+	margin-top: 30px;
+	margin-left: 30px;
+}
+
+#contenedor_lista_productos{
+	margin-top: 50px;
+}
+
+#TABLA_lista_productos, #TABLA_lista_productos th, #TABLA_lista_productos td{
+	color: white;
+	/*border: 1px solid white;*/
+	padding-left: 10px;
+	padding-right: 10px;
+	/*padding-top: 10px;*/
+	border-collapse: collapse;
+}
+
+#TABLA_lista_productos td{
+	text-align: center;
+}
+
+.costo{
+	display: none;
+}
+
+.highlight {
+    background-color: tomato;
+}
+
+
+

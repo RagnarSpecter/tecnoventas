@@ -1,0 +1,1 @@
+Hice una copia de estos archivos, ya que voy a enfocar desde otra perspectiva el trabajo en las mismas.  En estas, habia codigo como para que, al momento de estar eligiendo un producto para ser comprado, se pueda cargar nuevas categorias, marcas, modelos, colores, etc.

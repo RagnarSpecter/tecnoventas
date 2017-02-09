@@ -1,0 +1,43 @@
+#renglon1{
+	/*border: 1px solid grey;*/
+	overflow: auto;
+	padding-top: 25px;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+		#contenedor_saldo_cuentas, 		
+		#contenedor_saldo_clientes,
+		#contenedor_comisiones,
+		#contenedor_proyeccion_ganancias{
+			border: 1px solid white;
+			width: 45%;
+		}
+
+		#contenedor_saldo_cuentas{
+			float: left;
+		}
+
+		#contenedor_saldo_clientes,
+		#contenedor_comisiones,
+		#contenedor_proyeccion_ganancias{
+			float: right;
+			margin-bottom: 20px;
+		}
+
+#contenedor_saldo_cuentas table, #contenedor_saldo_clientes table,
+#contenedor_comisiones table, #contenedor_proyeccion_ganancias table{
+	margin: 0 auto;
+}
+
+#contenedor_saldo_cuentas th, #contenedor_saldo_clientes th,
+#contenedor_comisiones th, #contenedor_proyeccion_ganancias th{
+	font-size: 1.5em;
+	padding-bottom: 10px;
+}
+
+#contenedor_saldo_cuentas td, #contenedor_saldo_clientes td,
+#contenedor_comisiones td, #contenedor_proyeccion_ganancias td{
+	padding-right: 5px;
+	padding-bottom: 10px;
+}

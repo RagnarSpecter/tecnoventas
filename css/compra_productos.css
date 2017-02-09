@@ -1,0 +1,68 @@
+#contenedor_opciones_compra{
+	/*border: 1px solid blue;*/
+	text-align: center;
+}
+
+		#contenedor_opciones_compra > h2{
+			/*text-align: center;*/
+			padding-top: 30px;
+			padding-bottom: 30px;
+			font-size: 2em;
+		}
+
+		#contenedor_opciones_compra > span{
+			/*border: 1px solid yellow;*/
+			margin: 0 auto;
+			font-size: 2.5em;
+			cursor: pointer;
+		}
+
+		#contenedor_opciones_compra span:first-of-type{
+			
+			margin-right: 100px;	
+		}
+
+#contenedor_detalles_compra_insumos{
+	display: none;
+	border: 1px solid yellow;
+}
+
+#contenedor_detalles_compra_productos{
+	display: none;
+	/*border: 1px solid green;*/
+}
+
+	#contenedor_selects_familia_categoria,
+	#contenedor_selects_marca_modelo{
+		/*border: 1px solid blue;*/
+		text-align: center;
+		
+	}
+
+	#TABLA_lista_productos_familia{
+		width: 1000px;
+		margin: 0 auto;
+	}
+
+	#TABLA_lista_productos_familia, #TABLA_lista_productos_familia th, #TABLA_lista_productos_familia td{
+		color          : white;
+		padding-left   : 10px;
+		padding-right  : 10px;
+		padding-top    : 10px;
+		padding-bottom : 5px;
+		border-collapse: collapse;
+	}
+
+	#TABLA_lista_productos_familia td{
+
+		text-align: center;
+	}
+
+	.contenedor_costo_y_cantidad td{
+		border: 1px solid red;
+	}
+
+	#contenedor_detalles_categoria_plataforma{
+	
+		display: none;
+	}
