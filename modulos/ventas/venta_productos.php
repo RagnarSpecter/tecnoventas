@@ -1,5 +1,7 @@
 <?php
-require_once( "class.php" );
+// require_once( "../../class.php" );
+require_once( "class_venta_productos.php" );
+
 if ( !isset($_SESSION['usuario']) ){
 	echo "<script>
 			alert('Usted debe estar logueado para ingresar al sistema');
@@ -7,7 +9,7 @@ if ( !isset($_SESSION['usuario']) ){
 		  </script>";
 }
 else{
-	$t = new Ventas;
+	$t = new Trabajo;
 	// $retorno = $t->resumen_saldos();
 }
 ?>
@@ -25,7 +27,7 @@ else{
 		<link rel="stylesheet" href="../../css/general.css">
 			
 			<!-- Estilo de la pagina -->
-		<link rel="stylesheet" href="../../modulos/ventas/venta_productos.css">
+		<link rel="stylesheet" href="venta_productos.css">
 			
 			<!-- Soporte para los efectos hover -->
 		<link href="../../css/hover.css" rel="stylesheet" media="all">
@@ -35,7 +37,7 @@ else{
 		<script type="text/javascript" src="../../jquery.js"></script>
 			
 			<!-- Funciones de la pagina -->
-		<script type="text/javascript" src="modulos/ventas/venta_productos.js"></script>
+		<script type="text/javascript" src="venta_productos.js"></script>
 	</head>
 
 	<body class="main_background">
@@ -79,14 +81,6 @@ else{
 						<option value=""> -Seleccione una Marca- </option>
 					</select>
 				</span>
-
-				<!-- BLOQUE PARA SELECCIONAR UN MODELO -->
-				<span>Seleccione un modelo: </span>
-				<span id="contenedor_select_modelo">
-					<select name="modelo">
-						<option value=""> -Seleccione un Modelo- </option>
-					</select>
-				</span>
 								
 				<br><br>
 
@@ -97,7 +91,7 @@ else{
 
 			<!-- CONTENEDOR ICONO CARGANDO -->
 			<div id="contenedor_cargando">
-				<img src="imagenes/cargando.gif" alt="cargando" >
+				<img src="../../imagenes/cargando.gif" alt="cargando" >
 			</div>
 
 			<!-- CONTENEDOR CONTADOR CARRITO -->

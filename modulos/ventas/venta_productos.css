@@ -11,10 +11,14 @@ h2{
 	padding-bottom: 20px;
 }
 
+#contenedor_filtro_productos{
+	text-align: center;
+}
+
 #TABLA_lista_productos_familia{
-		width: 1000px;
-		margin: 0 auto;
-	}
+	width: 1100px;
+	margin: 0 auto;
+}
 
 	#TABLA_lista_productos_familia, #TABLA_lista_productos_familia th, #TABLA_lista_productos_familia td{
 		color          : white;

@@ -9,7 +9,7 @@ $(document).ready(function(){
 		
 		// Envio por post el valor del select familia a una tabla intermedia y de alli, cargo lo devuelto
 		// en el span contenedor_select_categoria
-		$("#contenedor_select_categoria").load("select_categoria_ajax.php", {"cod_familia":cod_familia});
+		$("#contenedor_select_categoria").load("../../select_categoria_ajax.php", {"cod_familia":cod_familia});
 
 		// Una vez cargado el select de categoria, dependiente de la familia seleccionada,
 		// se aprovecha para mostrar ya una lista completa de los productos pertenecientes
@@ -26,11 +26,11 @@ $(document).ready(function(){
 	$("#contenedor_filtro_productos").on( "change", "#categoria", function() {
 		
 		// Se captura el valor del select de familia en la variable cod_familia
-		var cod_categoria = $("#categoria").val();
+		var cod_categoria = $(this).val();
 		
 		// Envio por post el valor del select familia a una tabla intermedia y de alli, cargo lo devuelto
 		// en el span contenedor_select_categoria
-		$("#contenedor_select_marca").load("select_marca_ajax.php", {"cod_categoria":cod_categoria});
+		$("#contenedor_select_marca").load("../../select_marca_ajax.php", {"cod_categoria":cod_categoria});
 
 		// Una vez cargado el select de categoria, dependiente de la familia seleccionada,
 		// se aprovecha para mostrar ya una lista completa de los productos pertenecientes
@@ -91,6 +91,5 @@ $(document).ready(function(){
 		$('.check_vender').each(function(i){
 			$(this).removeAttr('disabled');
 		});
-		
 	});
 });
