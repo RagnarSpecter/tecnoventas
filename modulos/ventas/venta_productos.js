@@ -25,18 +25,18 @@ $(document).ready(function(){
 	// cargue el select de MARCAS RELACIONADAS a la categoria.
 	$("#contenedor_filtro_productos").on( "change", "#categoria", function() {
 		
-		// Se captura el valor del select de familia en la variable cod_familia
+		// Se captura el valor del select de categoria en la variable cod_categoria
 		var cod_categoria = $(this).val();
 		
-		// Envio por post el valor del select familia a una tabla intermedia y de alli, cargo lo devuelto
+		// Envio por post el valor del select categoria a una tabla intermedia y de alli, cargo lo devuelto
 		// en el span contenedor_select_categoria
 		$("#contenedor_select_marca").load("../../select_marca_ajax.php", {"cod_categoria":cod_categoria});
 
-		// Una vez cargado el select de categoria, dependiente de la familia seleccionada,
+		// Una vez cargado el select de MARCA, dependiente de la CATEGORIA seleccionada,
 		// se aprovecha para mostrar ya una lista completa de los productos pertenecientes
-		// a la familia seleccionada.
+		// a la CATEGORIA seleccionada.
 		$("#contenedor_cargando").show( 'slow', function() {
-			$("#contenedor_lista_productos").load( "lista_productos_categoria_compra_ajax.php", { "cod_categoria" : cod_categoria }, function(retorno){
+			$("#contenedor_lista_productos").load( "lista_productos_categoria_venta_ajax.php", { "cod_categoria" : cod_categoria }, function(retorno){
 				$("#contenedor_cargando").hide( 'slow');
 			});
 		});
@@ -48,11 +48,14 @@ $(document).ready(function(){
 		
 		// Se captura el valor del select de familia en la variable cod_familia
 		var cod_categoria = $("#categoria").val();
-		var cod_marca = $("#categoria").val();
-		
-		// Envio por post el valor del select familia a una tabla intermedia y de alli, cargo lo devuelto
-		// en el span contenedor_select_categoria
-		$("#contenedor_select_modelo").load("select_modelo_ajax.php", {"cod_categoria":cod_categoria, "cod_marca":cod_marca});
+		var cod_marca = $(this).val();
+
+		// Al seleccionar una MARCA del select, se muestra la lista de productos correspondiente a la misma.
+		$("#contenedor_cargando").show( 'slow', function() {
+			$("#contenedor_lista_productos").load( "lista_productos_marca_venta_ajax.php", { "cod_familia" : cod_familia, "cod_categoria" : cod_categoria, "cod_marca" : cod_marca }, function(retorno){
+				$("#contenedor_cargando").hide( 'slow');
+			});
+		});
 	});
 
 	// Evento para que al hacer click sobre un checkbox, muestre las opciones de compra,

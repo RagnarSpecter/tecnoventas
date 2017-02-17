@@ -146,7 +146,7 @@
 
 		// Metodo para devolver una tabla con la lista de productos por categoria, 
 		// exclusivo para la pagina de venta de productos.
-		public function lista_productos_categoria_venta( $cod_categoria ){
+		public function lista_productos_categoria_venta( $cod_categoria	 ){
 			
 			// VARIABLES
 			$lista = "";
@@ -159,8 +159,8 @@
 			$con = $this->trabajo->conexion();
 
 			// Primero cuento la cantidad de productos que hay con el codigo de familia elegido
-			$consulta = $con->prepare( "SELECT COUNT(*) AS cantidad FROM producto WHERE cod_familia = ?" );
-			$consulta->bindValue( 1, $cod_familia );
+			$consulta = $con->prepare( "SELECT COUNT(*) AS cantidad FROM producto WHERE cod_categoria = ?" );
+			$consulta->bindValue( 1, $cod_categoria );
 			$consulta->execute();
 			$temporal = $consulta->fetch( PDO::FETCH_ASSOC );
 			$cantidad = $temporal['cantidad'];
@@ -177,32 +177,30 @@
 
 				$consulta = $con->prepare( 	"
 												SELECT 
-													p.cod_familia AS codigo_familia,
-													p.cod_producto AS codigo_producto,
-													p.cod_categoria AS codigo_categoria, 
-													procat.descripcion AS categoria,
-													promar.descripcion AS marca,
-													promod.descripcion AS modelo,
-													procol.descripcion AS color,
-													propla.descripcion AS plataforma,
-													p.precio_venta AS precio_venta, 
-													p.descripcion AS descripcion
-												FROM producto AS p
-												JOIN producto_categoria AS procat on p.cod_categoria = procat.cod_categoria
-												JOIN producto_marca AS promar on p.cod_marca = promar.cod_marca
-												JOIN producto_modelo AS promod on p.cod_modelo = promod.cod_modelo
-												JOIN producto_color AS procol on p.cod_color = procol.cod_color
-												JOIN producto_plataforma AS propla on p.cod_plataforma = propla.cod_plataforma
-												WHERE p.cod_familia = ".$cod_familia."
+													p.cod_familia 		AS codigo_familia,
+													p.cod_producto 		AS codigo_producto,
+													p.cod_categoria 	AS codigo_categoria, 
+													procat.descripcion 	AS categoria,
+													promar.descripcion 	AS marca,
+													promod.descripcion 	AS modelo,
+													procol.descripcion 	AS color,
+													propla.descripcion 	AS plataforma,
+													p.precio_venta 		AS precio_venta, 
+													p.descripcion 		AS descripcion
+												FROM producto 				AS p
+												JOIN producto_categoria 	AS procat on p.cod_categoria = procat.cod_categoria
+												JOIN producto_marca 		AS promar on p.cod_marca = promar.cod_marca
+												JOIN producto_modelo 		AS promod on p.cod_modelo = promod.cod_modelo
+												JOIN producto_color 		AS procol on p.cod_color = procol.cod_color
+												JOIN producto_plataforma	AS propla on p.cod_plataforma = propla.cod_plataforma
+												WHERE p.cod_categoria = ".$cod_categoria."
 											");
 
 				$consulta->execute();
 
 
-				while( $row = $consulta->fetch( PDO::FETCH_ASSOC ) ){
-
+				while( $row = $consulta->fetch( PDO::FETCH_ASSOC ) )
 					$productos[] = $row;
-				}
 
 				$cantidad = count( $productos );
 				
