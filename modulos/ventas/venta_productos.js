@@ -11,6 +11,8 @@ $(document).ready(function(){
 		// en el span contenedor_select_categoria
 		$("#contenedor_select_categoria").load("../../select_categoria_ajax.php", {"cod_familia":cod_familia});
 
+		$("#contenedor_select_marca").html("<select name='marca'><option value=''> -Elegir Marca- </option></select>");
+
 		// Una vez cargado el select de categoria, dependiente de la familia seleccionada,
 		// se aprovecha para mostrar ya una lista completa de los productos pertenecientes
 		// a la familia seleccionada.
@@ -47,7 +49,8 @@ $(document).ready(function(){
 	$("#contenedor_filtro_productos").on( "change", "#marca", function() {
 		
 		// Se captura el valor del select de familia en la variable cod_familia
-		var cod_categoria = $("#categoria").val();
+		var cod_familia = $("#familia").val();
+ 		var cod_categoria = $("#categoria").val();
 		var cod_marca = $(this).val();
 
 		// Al seleccionar una MARCA del select, se muestra la lista de productos correspondiente a la misma.

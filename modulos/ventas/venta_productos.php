@@ -70,7 +70,7 @@ else{
 				<span>Seleccione una categoria: </span>
 				<span id="contenedor_select_categoria">
 					<select name="categoria">
-						<option value=""> -Seleccione una Categoria- </option>
+						<option value=""> -Elegir categoria- </option>
 					</select>
 				</span>
 
@@ -78,7 +78,7 @@ else{
 				<span>Seleccione una marca: </span>
 				<span id="contenedor_select_marca">
 					<select name="marca">
-						<option value=""> -Seleccione una Marca- </option>
+						<option value=""> -Elegir marca- </option>
 					</select>
 				</span>
 								
