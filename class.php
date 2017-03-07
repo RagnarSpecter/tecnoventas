@@ -2,6 +2,7 @@
 	if( !isset( $_SESSION ) ){
 
 		session_start();
+
 	}
 
 	class Trabajo{
@@ -69,6 +70,7 @@
 								
 								$_SESSION[ 'usuario' ] = $this->cadena( $registro );
 								$_SESSION[ 'cedula' ] =  $cedula;
+								$_SESSION["carrito"] = array();
 								header("Location:inicio.php");
 								$con->null;
 								

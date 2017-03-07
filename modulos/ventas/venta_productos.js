@@ -98,4 +98,40 @@ $(document).ready(function(){
 			$(this).removeAttr('disabled');
 		});
 	});
+
+	$( '#contenedor_lista_productos' ).on( 'click', '#btn_vender', function() {
+		
+		var cod_producto = $(this).attr('name');
+		var precio = $("#costo_producto_" + cod_producto ).val().replace(".","");
+		var cantidad = $("#cantidad_" + cod_producto ).val();
+
+		// alert("Los valores capturados son: \ncod_producto = " + cod_producto + "\nprecio = " + precio + "\ncantidad = " + cantidad);
+		
+		$.post( "cargar_carrito_ajax.php", { "cod_producto":cod_producto, "precio":precio, "cantidad":cantidad }, function( retorno ){
+			$( "#alerta" ).dialog({
+				autoOpen: false,
+		    	resizable: false,
+		    	height: "auto",
+		    	width: 400,
+		    	modal: true,
+		    	show:{
+		        	effect: "blind",
+			        duration: 1000
+			    },
+			    hide:{
+			        effect: "fade",
+			        duration: 1000
+			    },
+		    	// title: "",
+		    	buttons: {
+			    	OK: function() {
+			        	$( this ).dialog( "close" );
+			        }
+			    }
+			});
+			$("#alerta").html("<span>" + retorno + "</span>");
+			$("#alerta").dialog("open");
+			return false;
+		})
+	});
 });

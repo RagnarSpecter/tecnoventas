@@ -38,6 +38,29 @@ else{
 			
 			<!-- Funciones de la pagina -->
 		<script type="text/javascript" src="venta_productos.js"></script>
+
+		<!-- Funciones de las alertas -->
+			<!-- Estilo -->
+		<link rel="stylesheet" type="text/css" media="all" href="../../jQuery/ui/jquery-ui.css"/>
+			<!-- Soporte para Jquery UI -->
+		<script type="text/javascript" src="../../jQuery/ui/jquery-ui.js"></script>
+
+		<!-- Funciones para cargar un numero con separador de miles -->
+		<script>
+			function format(input){
+		
+				var num = input.value.replace(/\./g,'');
+				
+				if(!isNaN(num)){
+					num = num.toString().split('').reverse().join('').replace(/(?=\d*\.?)(\d{3})/g,'$1.');
+					num = num.split('').reverse().join('').replace(/^[\.]/,'');
+					input.value = num;
+				}else{ 
+					alert('Solo se permiten numeros');
+					input.value = input.value.replace(/[^\d\.]*/g,'');
+				}
+			}
+		</script>
 	</head>
 
 	<body class="main_background">
